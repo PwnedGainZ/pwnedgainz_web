@@ -9,7 +9,7 @@ En muchos casos, trabajaremos para establecer un `Shell` en un sistema de red lo
 
 Con un Shell de enlace, el sistema de destino tiene un oyente iniciado y espera una conexión del sistema de un Pentester (attack box).
 
-![Pasted image 20250615055557.png](/img/user/Pasted%20image%2020250615055557.png)
+![Pasted image 20250615055557.png](/img/user/imgs/Pasted%20image%2020250615055557.png)
 Como se ve en la imagen, nos conectaríamos directamente con la`dirección IP` y el puerto de escucha del objetivo. Obtener un Shell de esta manera puede presentar varios desafíos. Algunos a considerar:
 
 - Tendría que haber un oyente que ya haya empezado a trabajar en el objetivo.
@@ -21,7 +21,7 @@ Los firewalls del sistema operativo pueden ser problemáticos al establecer un S
 
 ---
 
-![Pasted image 20250615060450.png](/img/user/Pasted%20image%2020250615060450.png)
+![Pasted image 20250615060450.png](/img/user/imgs/Pasted%20image%2020250615060450.png)
 
 ## Establishing a Basic Bind Shell with Netcat
 
@@ -37,7 +37,7 @@ Los comandos anteriores se consideran nuestra carga útil, la cual entregamos ma
 
 De regreso en el cliente, use Netcat para conectarse al servidor ahora que se está sirviendo un shell en el servidor.
 
-![Pasted image 20250615060728.png](/img/user/Pasted%20image%2020250615060728.png)
+![Pasted image 20250615060728.png](/img/user/imgs/Pasted%20image%2020250615060728.png)
 
 ---
 #Shell #bind-shell

@@ -41,7 +41,7 @@ NO TENGA VISIÓN DE TÚNEL. **Utilicemos la herramienta como una herramienta**, 
 
 El proyecto `Metasploit` es una plataforma modular de pruebas de penetración basada en Ruby lo cuál le permite escribir, probar y ejecutar el código de explotación. Este código de `exploit` puede ser personalizado por el usuario o tomado de una base de datos que contiene los últimos exploits ya descubiertos y modularizados. El **framework** `Metasploit` incluye un conjunto de herramientas que puede utilizar para probar vulnerabilidades de seguridad, enumerar redes, ejecutar ataques y evadir la detección. ***Entonces, el proyecto Metasploit es una colección de herramientas de uso común que proporcionan un entorno completo para las pruebas de penetración y el desarrollo de exploits.***
 
-![Pasted image 20250616074134.png](/img/user/Pasted%20image%2020250616074134.png)
+![Pasted image 20250616074134.png](/img/user/imgs/Pasted%20image%2020250616074134.png)
 
 Su punto fuerte es que proporciona una gran cantidad de objetivos y versiones disponibles, todos a pocos comandos de distancia de un punto de apoyo exitoso. Estos, combinados con un exploit hecho a medida para esas versiones vulnerables y con una carga útil que se envía después del exploit, que nos dará acceso real al sistema.
 
@@ -58,7 +58,7 @@ Metasploit como producto se divide en dos versiones. El `Metasploit Pro` y el `M
 
 Si eres más un usuario de línea de comandos y prefieres las funciones adicionales, la versión Pro también cuenta con su propia consola, al igual que `msfconsole`.
 
-![Pasted image 20250616075114.png](/img/user/Pasted%20image%2020250616075114.png)
+![Pasted image 20250616075114.png](/img/user/imgs/Pasted%20image%2020250616075114.png)
 
 ## Modules
 
@@ -74,19 +74,19 @@ auxiliary enconders evasion exploits nops payloads post
 
 Los plugins ofrecen al Pentester más flexibilidad a la hora de utilizar el `msfconsole` ya que se pueden cargar fácilmente de forma manual o automática según sea necesario para proporcionar funcionalidad y automatización adicionales durante nuestra evaluación.
 
-![Pasted image 20250616075724.png](/img/user/Pasted%20image%2020250616075724.png)
+![Pasted image 20250616075724.png](/img/user/imgs/Pasted%20image%2020250616075724.png)
 
 ## Scripts
 
 Funcionalidad de `Meterpreter` y otros scripts útiles.
 
-![Pasted image 20250616075819.png](/img/user/Pasted%20image%2020250616075819.png)
+![Pasted image 20250616075819.png](/img/user/imgs/Pasted%20image%2020250616075819.png)
 
 ## Tools
 
 Utilidades de línea de comandos a las que se puede llamar directamente desde el menú `msfconsole`
 
-![Pasted image 20250616075928.png](/img/user/Pasted%20image%2020250616075928.png)
+![Pasted image 20250616075928.png](/img/user/imgs/Pasted%20image%2020250616075928.png)
 
 Ahora que conocemos todas estas ubicaciones, nos será fácil hacer referencia a ellas en el futuro cuando decidamos importar nuevos módulos o incluso crear nuevos desde cero :)
 

