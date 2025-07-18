@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/penetration-tester-path/evaluacion-de-la-vulnerabilidad/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/penetration-tester-path/evaluacion-de-la-vulnerabilidad/"}
 ---
 
 

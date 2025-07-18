@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-home":true,"title":"Bienvenido","permalink":"/bienvenido/","tags":["gardenEntry"],"dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/bienvenido/","title":"Bienvenido","tags":["gardenEntry"]}
 ---
 
 ----

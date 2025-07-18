@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/penetration-tester-path/bind-shells/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/penetration-tester-path/bind-shells/"}
 ---
 
 

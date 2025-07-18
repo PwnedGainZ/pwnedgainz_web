@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/hacking/basico/privilegios-especiales-capabilities/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/hacking/basico/privilegios-especiales-capabilities/"}
 ---
 
 

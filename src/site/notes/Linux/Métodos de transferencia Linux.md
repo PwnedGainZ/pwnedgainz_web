@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/linux/metodos-de-transferencia-linux/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/linux/metodos-de-transferencia-linux/"}
 ---
 
 ## Introducción:

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/programacion-web/obfuscacion/decodificacion/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/programacion-web/obfuscacion/decodificacion/"}
 ---
 
 

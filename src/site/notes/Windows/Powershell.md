@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/windows/powershell/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/windows/powershell/"}
 ---
 
 

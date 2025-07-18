@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/bug-bounty/jwt/jwt/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/bug-bounty/jwt/jwt/"}
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/penetration-tester-path/shell-and-payloads/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/penetration-tester-path/shell-and-payloads/"}
 ---
 
 

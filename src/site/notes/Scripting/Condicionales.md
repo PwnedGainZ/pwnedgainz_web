@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/scripting/condicionales/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/scripting/condicionales/"}
 ---
 
 

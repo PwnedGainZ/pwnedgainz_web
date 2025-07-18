@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/hack-the-box/sorcery/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/hack-the-box/sorcery/"}
 ---
 
 

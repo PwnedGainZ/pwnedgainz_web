@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/programacion-web/obfuscacion/obfuscacion-de-codigo-basica/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/programacion-web/obfuscacion/obfuscacion-de-codigo-basica/"}
 ---
 
 

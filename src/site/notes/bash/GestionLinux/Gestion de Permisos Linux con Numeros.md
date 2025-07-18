@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/bash/gestion-linux/gestion-de-permisos-linux-con-numeros/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/bash/gestion-linux/gestion-de-permisos-linux-con-numeros/"}
 ---
 
 
