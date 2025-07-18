@@ -10,7 +10,7 @@
 Este es nuestro **Digital Garden**, estaremos adjuntando nuestras notas, recursos, CTFs y cursos de la universidad, lo que se nos da la gana compartir.
 
 Pasa, curiosea y si algo te gusta, piola.  
-Y si no te gusta... **GTFO**
+Y si no te gustaa... **GTFO**
 
 ![MEME_CIBERSEC.jpeg](/img/user/imgs/MEME_CIBERSEC.jpeg)
 
