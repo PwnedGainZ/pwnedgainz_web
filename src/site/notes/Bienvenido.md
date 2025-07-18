@@ -25,4 +25,4 @@ Y si no te gusta... **GTFO** 😎
 
 ### ¿Contribuciones al MD o al sitio?
 
-Puedes aportar desdeee 👉 [Aquí](https://guns.lol/mrbloody) 💖
+Puedes aportar desdeeee 👉 [Aquí](https://guns.lol/mrbloody) 💖
