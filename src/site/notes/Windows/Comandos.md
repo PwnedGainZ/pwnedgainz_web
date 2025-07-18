@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/windows/comandos/"}
+{"dg-publish":true,"permalink":"/windows/comandos/","dgPassFrontmatter":true}
 ---
 
 

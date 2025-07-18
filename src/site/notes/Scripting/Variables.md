@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/scripting/variables/"}
+{"dg-publish":true,"permalink":"/scripting/variables/","dgPassFrontmatter":true}
 ---
 
 

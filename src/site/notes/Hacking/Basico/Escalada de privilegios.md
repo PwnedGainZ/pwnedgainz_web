@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/hacking/basico/escalada-de-privilegios/"}
+{"dg-publish":true,"permalink":"/hacking/basico/escalada-de-privilegios/","dgPassFrontmatter":true}
 ---
 
 

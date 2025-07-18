@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/bash/gestion-linux/crear-usuarios/"}
+{"dg-publish":true,"permalink":"/bash/gestion-linux/crear-usuarios/","dgPassFrontmatter":true}
 ---
 
 

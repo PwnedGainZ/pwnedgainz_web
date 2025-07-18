@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/bash/gestion-linux/awk/"}
+{"dg-publish":true,"permalink":"/bash/gestion-linux/awk/","dgPassFrontmatter":true}
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/hacking/basico/hacking-basico/"}
+{"dg-publish":true,"permalink":"/hacking/basico/hacking-basico/","dgPassFrontmatter":true}
 ---
 
 

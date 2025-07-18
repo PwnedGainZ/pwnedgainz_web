@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/scripting/operadores-logicos/"}
+{"dg-publish":true,"permalink":"/scripting/operadores-logicos/","dgPassFrontmatter":true}
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/bug-bounty/template-injection/server-side-template-injection/"}
+{"dg-publish":true,"permalink":"/bug-bounty/template-injection/server-side-template-injection/","dgPassFrontmatter":true}
 ---
 
 Server-Side Template Injection (SSTI) es una vulnerabilidad web que ocurre cuando una aplicacion del lado del servidor (server-side) evalua dinamicamente plantillas (templates) con entradas controladas por el usuario sin una validacion adecuada.

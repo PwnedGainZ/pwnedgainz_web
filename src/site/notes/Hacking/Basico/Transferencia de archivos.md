@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/hacking/basico/transferencia-de-archivos/"}
+{"dg-publish":true,"permalink":"/hacking/basico/transferencia-de-archivos/","dgPassFrontmatter":true}
 ---
 
 

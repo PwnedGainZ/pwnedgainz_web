@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/penetration-tester-path/active-directory-notes/"}
+{"dg-publish":true,"permalink":"/penetration-tester-path/active-directory-notes/","dgPassFrontmatter":true}
 ---
 
 

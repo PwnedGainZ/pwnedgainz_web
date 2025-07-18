@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/hacking/basico/metasploit/"}
+{"dg-publish":true,"permalink":"/hacking/basico/metasploit/","dgPassFrontmatter":true}
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/bases-de-datos/sql/"}
+{"dg-publish":true,"permalink":"/bases-de-datos/sql/","dgPassFrontmatter":true}
 ---
 
 

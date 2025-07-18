@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/hacking/basico/decrypt-pem-and-txt/"}
+{"dg-publish":true,"permalink":"/hacking/basico/decrypt-pem-and-txt/","dgPassFrontmatter":true}
 ---
 
 

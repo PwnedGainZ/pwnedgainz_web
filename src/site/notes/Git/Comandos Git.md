@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/git/comandos-git/"}
+{"dg-publish":true,"permalink":"/git/comandos-git/","dgPassFrontmatter":true}
 ---
 
 

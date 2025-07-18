@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/windows/metodos-de-transferencia-en-windows/"}
+{"dg-publish":true,"permalink":"/windows/metodos-de-transferencia-en-windows/","dgPassFrontmatter":true}
 ---
 
 

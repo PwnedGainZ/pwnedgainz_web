@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/bash/gestion-linux/secuenciadores/"}
+{"dg-publish":true,"permalink":"/bash/gestion-linux/secuenciadores/","dgPassFrontmatter":true}
 ---
 
 

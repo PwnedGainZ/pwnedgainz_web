@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/penetration-tester-path/metasploit/"}
+{"dg-publish":true,"permalink":"/penetration-tester-path/metasploit/","dgPassFrontmatter":true}
 ---
 
 

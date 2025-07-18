@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/hacking/basico/web-enumeration/"}
+{"dg-publish":true,"permalink":"/hacking/basico/web-enumeration/","dgPassFrontmatter":true}
 ---
 
 

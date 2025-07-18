@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/bash/gestion-linux/curl/"}
+{"dg-publish":true,"permalink":"/bash/gestion-linux/curl/","dgPassFrontmatter":true}
 ---
 
 

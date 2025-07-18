@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/programacion-web/obfuscacion/ofuscacion-avanzada/"}
+{"dg-publish":true,"permalink":"/programacion-web/obfuscacion/ofuscacion-avanzada/","dgPassFrontmatter":true}
 ---
 
 

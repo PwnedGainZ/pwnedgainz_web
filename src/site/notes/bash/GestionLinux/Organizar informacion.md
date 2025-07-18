@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/bash/gestion-linux/organizar-informacion/"}
+{"dg-publish":true,"permalink":"/bash/gestion-linux/organizar-informacion/","dgPassFrontmatter":true}
 ---
 
 
