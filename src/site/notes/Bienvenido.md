@@ -6,7 +6,7 @@
 ## ¡Bienvenido!
 
 #bienvenida
-----
+
 
 Este es nuestro **Digital Garden**, estaremos adjuntando nuestras notas, recursos, CTFs y cursos de la universidad, lo que se nos da la gana compartir.
 
